@@ -56,5 +56,6 @@ namespace Practica
             {
                 MessageBox.Show("El número no existe en el arreglo.");
             }
+        }
     }
- }
+}
