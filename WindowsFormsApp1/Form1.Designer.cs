@@ -258,8 +258,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvBiblioteca;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscarTitulo;
         private System.Windows.Forms.TextBox txtTitulo;
@@ -278,6 +276,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridView dgvBiblioteca;
     }
 }
 
