@@ -43,6 +43,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnExtremos = new System.Windows.Forms.Button();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBiblioteca)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -53,11 +57,16 @@
             // dgvBiblioteca
             // 
             this.dgvBiblioteca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBiblioteca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Titulo,
+            this.Autor,
+            this.Año,
+            this.Descripcion});
             this.dgvBiblioteca.Location = new System.Drawing.Point(12, 12);
             this.dgvBiblioteca.Name = "dgvBiblioteca";
             this.dgvBiblioteca.RowHeadersWidth = 51;
             this.dgvBiblioteca.RowTemplate.Height = 24;
-            this.dgvBiblioteca.Size = new System.Drawing.Size(469, 125);
+            this.dgvBiblioteca.Size = new System.Drawing.Size(484, 125);
             this.dgvBiblioteca.TabIndex = 0;
             this.dgvBiblioteca.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBiblioteca_CellContentClick);
             // 
@@ -196,6 +205,34 @@
             this.btnExtremos.UseVisualStyleBackColor = true;
             this.btnExtremos.Click += new System.EventHandler(this.btnExtremos_Click_1);
             // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Width = 108;
+            // 
+            // Autor
+            // 
+            this.Autor.HeaderText = "Autor";
+            this.Autor.MinimumWidth = 6;
+            this.Autor.Name = "Autor";
+            this.Autor.Width = 108;
+            // 
+            // Año
+            // 
+            this.Año.HeaderText = "Año";
+            this.Año.MinimumWidth = 6;
+            this.Año.Name = "Año";
+            this.Año.Width = 107;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 108;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,6 +274,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnExtremos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Año;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }
 

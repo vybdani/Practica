@@ -29,16 +29,18 @@ namespace WindowsFormsApp1
 
             ActualizarTabla();  
         }
-
         private void ActualizarTabla()
         {
             dgvBiblioteca.Rows.Clear();
+
             foreach (var libro in biblioteca)
             {
                 dgvBiblioteca.Rows.Add(libro.Titulo, libro.Autor, libro.Anio, libro.Descripcion);
             }
-
         }
+
+
+
 
         private void btnBuscarTitulo_Click(object sender, EventArgs e)
         {
