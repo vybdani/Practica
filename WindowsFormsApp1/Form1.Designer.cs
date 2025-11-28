@@ -79,6 +79,7 @@
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(137, 22);
             this.txtTitulo.TabIndex = 1;
+            this.txtTitulo.TextChanged += new System.EventHandler(this.txtTitulo_TextChanged);
             // 
             // btnBuscarTitulo
             // 

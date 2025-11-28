@@ -225,5 +225,10 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Ninguna descripción tiene esa palabra");
             }
         }
+
+        private void txtTitulo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
