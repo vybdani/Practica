@@ -21,20 +21,23 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            dgvBiblioteca.AutoGenerateColumns = false;
+
             dgvBiblioteca.ColumnCount = 4;
             dgvBiblioteca.Columns[0].Name = "Título";
             dgvBiblioteca.Columns[1].Name = "Autor";
             dgvBiblioteca.Columns[2].Name = "Año";
             dgvBiblioteca.Columns[3].Name = "Descripción";
 
-            biblioteca.Add(new Libro { Titulo = "Cien anios de soledad", Autor = "Gabriel Garcia", Anio = 1967, Descripcion = "Novela sobre la familia Buendia" });
+            biblioteca.Add(new Libro { Titulo = "Cien años de soledad", Autor = "Gabriel Garcia", Anio = 1967, Descripcion = "Novela sobre la familia Buendía" });
             biblioteca.Add(new Libro { Titulo = "Don Quijote", Autor = "Miguel de Cervantes", Anio = 1605, Descripcion = "Un hidalgo que se cree caballero" });
             biblioteca.Add(new Libro { Titulo = "Harry Potter", Autor = "JK Rowling", Anio = 1997, Descripcion = "Un niño mago va a una escuela" });
             biblioteca.Add(new Libro { Titulo = "El Principito", Autor = "Antoine Saint", Anio = 1943, Descripcion = "Un aviador conoce a un niño" });
             biblioteca.Add(new Libro { Titulo = "1984", Autor = "George Orwell", Anio = 1949, Descripcion = "Historia sobre el control total" });
 
-            ActualizarTabla();  
+            ActualizarTabla();
         }
+
         private void ActualizarTabla()
         {
             dgvBiblioteca.Rows.Clear();
