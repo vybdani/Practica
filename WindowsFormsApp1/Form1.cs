@@ -55,20 +55,24 @@ namespace WindowsFormsApp1
         {
             string tituloBuscado = txtTitulo.Text.ToLower();
             bool encontrado = false;
+
             foreach (var libro in biblioteca)
             {
-                if (libro.Titulo.ToLower().Contains(tituloBuscado))
+                if (libro.Titulo.ToLower() == tituloBuscado)
                 {
-                    MessageBox.Show($"Libro encontrado:\nTítulo: {libro.Titulo}\nAutor: {libro.Autor}\nAño: {libro.Anio}\nDescripción: {libro.Descripcion}");
+                    MessageBox.Show("Libro encontrado:\n" +
+                                    libro.Titulo + "\nAutor: " + libro.Autor);
                     encontrado = true;
                     break;
                 }
             }
-            if (!encontrado == false)
+
+            if (encontrado == false)
             {
                 MessageBox.Show("Libro no encontrado.");
             }
         }
+
 
         public class Libro
         {
@@ -119,59 +123,6 @@ namespace WindowsFormsApp1
             if (encontrado == false) MessageBox.Show("Autor no encontrado");
         }
 
-        private void btnExtremos_Click(object sender, EventArgs e)
-        {
-            if (biblioteca.Count == 0) return;
-
-            Libro masViejo = biblioteca[0];
-            Libro masNuevo = biblioteca[0];
-
-            foreach (Libro libro in biblioteca)
-            {
-                if (libro.Anio < masViejo.Anio) masViejo = libro;
-                if (libro.Anio > masNuevo.Anio) masNuevo = libro;
-            }
-
-            MessageBox.Show("Más Viejo: " + masViejo.Titulo + " (" + masViejo.Anio + ")\n" +
-                            "Más Nuevo: " + masNuevo.Titulo + " (" + masNuevo.Anio + ")");
-        }
-
-        private void btnBuscarDesc_Click(object sender, EventArgs e)
-        {
-            string palabra = txtDescripcion.Text.ToLower();
-            string resultados = "";
-
-            foreach (Libro libro in biblioteca)
-            {
-                string texto = libro.Descripcion.ToLower();
-                bool contiene = false;
-
-                // Algoritmo manual para buscar texto dentro de texto
-                for (int i = 0; i <= texto.Length - palabra.Length; i++)
-                {
-                    bool coincide = true;
-                    for (int j = 0; j < palabra.Length; j++)
-                    {
-                        if (texto[i + j] != palabra[j])
-                        {
-                            coincide = false;
-                            break;
-                        }
-                    }
-                    if (coincide)
-                    {
-                        contiene = true;
-                        break;
-                    }
-                }
-
-                if (contiene) resultados += "- " + libro.Titulo + "\n";
-            }
-
-            if (resultados != "") MessageBox.Show("Encontrado en:\n" + resultados);
-            else MessageBox.Show("Ninguna descripción tiene esa palabra");
-        }
-
         private void dgvBiblioteca_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -190,11 +141,13 @@ namespace WindowsFormsApp1
                 if (libro.Anio > masNuevo.Anio) masNuevo = libro;
             }
 
-            MessageBox.Show($"Más Viejo: {masViejo.Titulo} ({masViejo.Anio})\nMás Nuevo: {masNuevo.Titulo} ({masNuevo.Anio})");
+            MessageBox.Show("Más Viejo: " + masViejo.Titulo + " (" + masViejo.Anio + ")\n" +
+                            "Más Nuevo: " + masNuevo.Titulo + " (" + masNuevo.Anio + ")");
         }
 
         private void btnBuscarDesc_Click_1(object sender, EventArgs e)
         {
+
             string palabra = txtDescripcion.Text.ToLower();
             string resultados = "";
 
